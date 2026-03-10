@@ -4,6 +4,11 @@
 	(generator_version "9.0")
 	(uuid "d5962bfe-f8e3-498b-95a4-e1da696cccfc")
 	(paper "A4")
+	(title_block
+		(title "Timemaster")
+		(date "2026-03-10")
+		(rev "B")
+	)
 	(lib_symbols
 		(symbol "+3V3_1"
 			(power)
