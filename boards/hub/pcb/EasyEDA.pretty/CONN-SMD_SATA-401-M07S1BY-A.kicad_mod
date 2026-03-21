@@ -1,0 +1,217 @@
+(footprint "CONN-SMD_SATA-401-M07S1BY-A"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(property "Reference" "REF**"
+		(at 0 -4.98 0)
+		(layer "F.SilkS")
+		(uuid "86e669fd-76aa-430b-91df-07761dc35f49")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "CONN-SMD_SATA-401-M07S1BY-A"
+		(at 0 4.97 0)
+		(layer "F.Fab")
+		(uuid "5dcb8af5-d1cf-41a7-9f64-037dbc654d26")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "b26175a8-8854-4f35-9a12-ff50a9f79114")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "e8b27bb8-753d-43c3-892f-ce2d006194a7")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "LCSC Part" "C7500835"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "3dfc68eb-63e8-41a8-917a-bb7b2b1c26b8")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr smd)
+	(fp_line
+		(start -9.14 9.34)
+		(end -9.14 -0.4)
+		(stroke
+			(width 0.25)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "8e597d2a-9d01-488e-9e48-9c069fc07846")
+	)
+	(fp_line
+		(start -7.96 -2.15)
+		(end -9.14 -0.4)
+		(stroke
+			(width 0.25)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "3eb2deab-0aa5-4c52-862d-99144730ad71")
+	)
+	(fp_line
+		(start -4.46 -2.15)
+		(end -7.96 -2.15)
+		(stroke
+			(width 0.25)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "0c3f07f1-4387-4c00-bfd0-7294da6e2ce1")
+	)
+	(fp_line
+		(start 4.78 -2.15)
+		(end 8.33 -2.15)
+		(stroke
+			(width 0.25)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "078c2968-ef24-46dc-bba9-44dad58f4f9c")
+	)
+	(fp_line
+		(start 8.33 -2.15)
+		(end 8.33 9.34)
+		(stroke
+			(width 0.25)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "3dde4569-5616-4273-a645-5f53ae480622")
+	)
+	(fp_line
+		(start 8.33 9.34)
+		(end -9.14 9.34)
+		(stroke
+			(width 0.25)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "b4c1344e-692c-43bc-9ee9-246f35722d46")
+	)
+	(fp_circle
+		(center -9.14 -2.15)
+		(end -9.11 -2.15)
+		(stroke
+			(width 0.06)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "ed72756a-1d0a-4390-aa4f-5b00381f9f47")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(uuid "b46cb4a3-1620-4aff-8a40-5b1c3f0c5831")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" smd rect
+		(at -3.8 -0.98)
+		(size 0.9 2.5)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "4ca52ba6-cac2-49f5-a325-f94bce9cd25e")
+	)
+	(pad "2" smd rect
+		(at -2.53 -0.98)
+		(size 0.9 2.5)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "3c2afb29-12b3-4f9e-a96d-f0df604d8e31")
+	)
+	(pad "3" smd rect
+		(at -1.26 -0.98)
+		(size 0.9 2.5)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "2f268634-5118-4afa-8159-07b97bb1c690")
+	)
+	(pad "4" smd rect
+		(at 0.01 -0.98)
+		(size 0.9 2.5)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "b47df6fc-e290-4330-8b8b-eb3f56be6456")
+	)
+	(pad "5" smd rect
+		(at 1.28 -0.98)
+		(size 0.9 2.5)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "5cbbe171-4194-4670-900a-14881ccfaf0f")
+	)
+	(pad "6" smd rect
+		(at 2.55 -0.98)
+		(size 0.9 2.5)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "089c658a-2666-4cc7-8d17-97e01da21b91")
+	)
+	(pad "7" smd rect
+		(at 3.82 -0.98)
+		(size 0.9 2.5)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "bfa14014-ddbf-4347-9f4c-71aef1f8f613")
+	)
+	(pad "8" thru_hole circle
+		(at 6.37 0.97)
+		(size 2.3 2.3)
+		(drill 1.500022)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "92f84959-6c3f-45bf-a3c9-03caf9a54f04")
+	)
+	(pad "9" thru_hole circle
+		(at -6.37 0.97)
+		(size 2.3 2.3)
+		(drill 1.500022)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "0e1ee9ba-02bd-4878-b153-732e802e2181")
+	)
+	(embedded_fonts no)
+	(model "${KIPRJMOD}/EasyEDA.3dshapes/CONN-SMD_SATA-401-M07S1BY-A.wrl"
+		(offset
+			(xyz -0.4 -3.6 2.8)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz -0 -0 -0)
+		)
+	)
+)
