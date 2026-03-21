@@ -1,0 +1,18 @@
+[package]
+name = "timemaster"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+cortex-m = { version = "0.7.7", features = ["critical-section-single-core"] }
+defmt = "1.0.1"
+defmt-rtt = "1.1.0"
+embassy-stm32 = { version = "0.6.0", features = [
+    "defmt",
+    "memory-x",
+    "stm32g031g8",
+    "unstable-pac",
+] }
+embedded-hal = "1.0.0"
+panic-probe = { version = "1.0.0", features = ["print-defmt"] }
+rtic = { version = "2.2.0", features = ["thumbv6-backend"] }
