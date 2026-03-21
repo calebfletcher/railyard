@@ -1,3 +1,6 @@
+[workspace]
+members = ["si5340"]
+
 [package]
 name = "timemaster"
 version = "0.1.0"
@@ -20,6 +23,7 @@ rtic-monotonics = { version = "2.1.0", features = [
     "defmt",
     "cortex-m-systick",
 ] }
+si5340 = { version = "0.1.0", path = "si5340" }
 
 [profile.dev.package."*"]
 opt-level = 2

@@ -21,6 +21,8 @@ embassy_stm32::bind_interrupts!(struct Irqs {
 #[rtic::app(device = embassy_stm32::pac, peripherals = false, dispatchers = [SPI1, SPI2])]
 mod app {
 
+    use si5340::Si5340;
+
     use super::*;
 
     #[shared]
@@ -80,16 +82,7 @@ mod app {
     #[task(local = [clk_i2c])]
     async fn check_i2c(cx: check_i2c::Context<'_>) {
         let i2c = cx.local.clk_i2c;
-
-        let address = 0b1110101;
-
-        i2c.write(address, &[0x0002]).await.unwrap();
-
-        let mut bytes = [0; 2];
-        i2c.read(address, &mut bytes).await.unwrap();
-        let chars = [bytes[1] >> 4, bytes[1] & 0xF, bytes[0] >> 4, bytes[0] & 0xF];
-
-        info!("read id {=[?]}", chars)
+        let mut _device = Si5340::new_i2c(i2c, si5340::Address::from_pins(true, false));
     }
 }
 
