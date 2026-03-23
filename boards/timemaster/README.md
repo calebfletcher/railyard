@@ -6,4 +6,4 @@ Includes a STM32G031G8Ux microcontroller to manage the Si5340, accessible over v
 
 5 debug LEDs are available to the STM32.
 
-![pcb image](timemaster.png)
+![pcb image](timemaster_photo.jpg)
