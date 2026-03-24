@@ -4,12 +4,14 @@
 use defmt_rtt as _;
 use panic_probe as _;
 
-pub mod pac {
-    pub use embassy_stm32::pac::Interrupt as interrupt;
-    pub use embassy_stm32::pac::*;
-}
+use defmt::info;
+use embassy_stm32::gpio::{Level, Speed};
+use rtic_monotonics::Monotonic as _;
+use rtic_monotonics::fugit::ExtU32;
 
-#[rtic::app(device = pac, peripherals = false, dispatchers = [USART1])]
+rtic_monotonics::systick_monotonic!(Mono, 10000);
+
+#[rtic::app(device = embassy_stm32::pac, peripherals = false, dispatchers = [SPI1, SPI2])]
 mod app {
     use super::*;
 
@@ -20,19 +22,40 @@ mod app {
     struct Local {}
 
     #[init]
-    fn init(_: init::Context) -> (Shared, Local) {
+    fn init(cx: init::Context) -> (Shared, Local) {
+        info!("starting timemaster");
+
+        let p = embassy_stm32::init(Default::default());
+
+        // Setup clocks and systick timer for delays
+        let clocks = embassy_stm32::rcc::clocks(&p.RCC);
+        let sysclk = clocks.sys.to_hertz().unwrap();
+        info!("running with sysclk: {}", sysclk);
+        Mono::start(cx.core.SYST, sysclk.0);
+
+        // Start health blinking led
+        let health_led = embassy_stm32::gpio::Output::new(p.PB5, Level::High, Speed::Low);
+        blink_led::spawn(health_led).ok();
+
         (Shared {}, Local {})
     }
 
-    // #[task(binds = USART2)]
-    // fn bar(c: bar::Context) {
-    //     crate::bar_trampoline(c)
-    // }
+    /// Blink one of the LEDs to show the system is alive
+    #[task(priority = 1)]
+    async fn blink_led(_: blink_led::Context<'_>, mut led: embassy_stm32::gpio::Output<'static>) {
+        info!("startttt");
+        loop {
+            led.set_high();
+            info!("high 1");
+            Mono::delay(500.millis()).await;
+            info!("high 2");
+            led.set_low();
+            Mono::delay(500.millis()).await;
+        }
+    }
 
-    extern "Rust" {
-        #[task(binds = I2C1)]
-        fn bar2(cx: bar2::Context);
+    #[idle]
+    fn idle(_: idle::Context<'_>) -> ! {
+        loop {}
     }
 }
-
-fn bar2(_: app::bar2::Context) {}

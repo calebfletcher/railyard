@@ -461,6 +461,16 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "877a4ace8713b0bcf2a4e7eec82529c029f1d0619886d18145fea96c3ffe5c0f"
 
 [[package]]
+name = "fugit"
+version = "0.3.9"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "4e639847d312d9a82d2e75b0edcc1e934efcc64e6cb7aa94f0b1fbec0bc231d6"
+dependencies = [
+ "defmt 0.3.100",
+ "gcd",
+]
+
+[[package]]
 name = "futures-core"
 version = "0.3.32"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -488,6 +498,12 @@ dependencies = [
  "futures-task",
  "pin-project-lite",
 ]
+
+[[package]]
+name = "gcd"
+version = "2.3.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1d758ba1b47b00caf47f24925c0074ecb20d6dfcffe7f6d53395c0465674841a"
 
 [[package]]
 name = "hash32"
@@ -678,6 +694,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "rtic-common"
+version = "1.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "67caeecca87cb20e1101eb104b0f05604633b7ab1035cce777417c6fb7c8f9a0"
+dependencies = [
+ "critical-section",
+ "portable-atomic",
+]
+
+[[package]]
 name = "rtic-core"
 version = "1.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -694,6 +720,33 @@ dependencies = [
  "proc-macro2",
  "quote",
  "syn 2.0.117",
+]
+
+[[package]]
+name = "rtic-monotonics"
+version = "2.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "99f9923ce32637ee40c0cb28fbbc2fad880d8aebea2d545918c6971ae9be3d17"
+dependencies = [
+ "cfg-if",
+ "cortex-m",
+ "fugit",
+ "portable-atomic",
+ "rtic-time",
+]
+
+[[package]]
+name = "rtic-time"
+version = "2.0.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "61485474f5a23247ae1d4875f2bfe860be9b3030dbf87c232e50799e021429a1"
+dependencies = [
+ "critical-section",
+ "embedded-hal 1.0.0",
+ "embedded-hal-async",
+ "fugit",
+ "futures-util",
+ "rtic-common",
 ]
 
 [[package]]
@@ -725,6 +778,13 @@ name = "semver-parser"
 version = "0.7.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "388a1df253eca08550bef6c72392cfe7c30914bf41df5269b68cbd6ff8f570a3"
+
+[[package]]
+name = "si5340"
+version = "0.1.0"
+dependencies = [
+ "embedded-hal 1.0.0",
+]
 
 [[package]]
 name = "stable_deref_trait"
@@ -811,6 +871,7 @@ dependencies = [
  "embedded-hal 1.0.0",
  "panic-probe",
  "rtic",
+ "rtic-monotonics",
 ]
 
 [[package]]

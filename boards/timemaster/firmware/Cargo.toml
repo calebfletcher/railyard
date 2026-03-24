@@ -1,3 +1,6 @@
+[workspace]
+members = ["si5340"]
+
 [package]
 name = "timemaster"
 version = "0.1.0"
@@ -16,3 +19,13 @@ embassy-stm32 = { version = "0.6.0", features = [
 embedded-hal = "1.0.0"
 panic-probe = { version = "1.0.0", features = ["print-defmt"] }
 rtic = { version = "2.2.0", features = ["thumbv6-backend"] }
+rtic-monotonics = { version = "2.1.0", features = [
+    "defmt",
+    "cortex-m-systick",
+] }
+
+[profile.dev.package."*"]
+opt-level = 2
+
+[profile.release]
+debug = 2
