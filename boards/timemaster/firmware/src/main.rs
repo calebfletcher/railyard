@@ -43,12 +43,9 @@ mod app {
     /// Blink one of the LEDs to show the system is alive
     #[task(priority = 1)]
     async fn blink_led(_: blink_led::Context<'_>, mut led: embassy_stm32::gpio::Output<'static>) {
-        info!("startttt");
         loop {
             led.set_high();
-            info!("high 1");
-            Mono::delay(500.millis()).await;
-            info!("high 2");
+            Mono::delay(100.millis()).await;
             led.set_low();
             Mono::delay(500.millis()).await;
         }

@@ -1,6 +1,3 @@
-[workspace]
-members = ["si5340"]
-
 [package]
 name = "timemaster"
 version = "0.1.0"
